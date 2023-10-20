@@ -101,14 +101,14 @@
   {
    "fieldname": "section_break_7",
    "fieldtype": "Section Break",
-   "label": "Base & Variable"
+   "label": "Gross & Variable"
   },
   {
    "fetch_from": "grade.default_base_pay",
    "fetch_if_empty": 1,
    "fieldname": "base",
    "fieldtype": "Currency",
-   "label": "Base",
+   "label": "Gross Pay",
    "options": "currency"
   },
   {
@@ -209,7 +209,7 @@
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2023-01-10 12:00:57.942233",
+ "modified": "2023-09-20 12:58:01.265591",
  "modified_by": "Administrator",
  "module": "Payroll",
  "name": "Salary Structure Assignment",

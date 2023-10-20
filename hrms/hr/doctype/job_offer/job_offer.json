@@ -9,7 +9,9 @@
  "field_order": [
   "job_applicant",
   "applicant_name",
+  "salutation",
   "applicant_email",
+  "applicant_age",
   "column_break_3",
   "status",
   "offer_date",
@@ -24,7 +26,38 @@
   "letter_head",
   "column_break_16",
   "select_print_heading",
-  "amended_from"
+  "amended_from",
+  "earnings_tab",
+  "gross_pay",
+  "basic",
+  "basic_rounded",
+  "hra",
+  "children",
+  "lta",
+  "other",
+  "column_break_3zhil",
+  "gross_pay_per_annum",
+  "basic_per_annum",
+  "hra_per_annum",
+  "children_education_allowance_per_annum",
+  "lta_per_annum",
+  "other_allowance_per_annum",
+  "statutory_benefits_tab",
+  "provident_fund",
+  "gratuity",
+  "column_break_a8vy4",
+  "provident_fund_per_annum",
+  "tax_calculations_tab",
+  "total_taxable_amount",
+  "income_tax",
+  "income_tax_per_month",
+  "cess",
+  "total_deductions",
+  "total_deductions_per_annum",
+  "column_break_6mer4",
+  "final_income_tax",
+  "net_pay_tab",
+  "net_pay"
  ],
  "fields": [
   {
@@ -156,14 +189,210 @@
    "options": "Job Offer",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "earnings_tab",
+   "fieldtype": "Tab Break",
+   "label": "Earnings "
+  },
+  {
+   "fieldname": "gross_pay",
+   "fieldtype": "Currency",
+   "label": "Gross Pay"
+  },
+  {
+   "fieldname": "basic",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Basic",
+   "read_only": 1
+  },
+  {
+   "description": "50% of Gross",
+   "fieldname": "basic_rounded",
+   "fieldtype": "Currency",
+   "label": "Basic + DA",
+   "read_only": 1
+  },
+  {
+   "description": "50% of Basic + DA",
+   "fieldname": "hra",
+   "fieldtype": "Currency",
+   "label": "HRA",
+   "read_only": 1
+  },
+  {
+   "fieldname": "children",
+   "fieldtype": "Currency",
+   "label": "Children Education Allowance",
+   "read_only": 1
+  },
+  {
+   "description": "6% of Basic + DA",
+   "fieldname": "lta",
+   "fieldtype": "Currency",
+   "label": "LTA",
+   "read_only": 1
+  },
+  {
+   "fieldname": "other",
+   "fieldtype": "Currency",
+   "label": "Other Allowance",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_3zhil",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gross_pay_per_annum",
+   "fieldtype": "Currency",
+   "label": "Gross Pay Per Annum",
+   "read_only": 1
+  },
+  {
+   "fieldname": "basic_per_annum",
+   "fieldtype": "Currency",
+   "label": "Basic + DA Per Annum",
+   "read_only": 1
+  },
+  {
+   "fieldname": "hra_per_annum",
+   "fieldtype": "Currency",
+   "label": "HRA Per Annum",
+   "read_only": 1
+  },
+  {
+   "fieldname": "children_education_allowance_per_annum",
+   "fieldtype": "Currency",
+   "label": "Children Education Allowance Per Annum",
+   "read_only": 1
+  },
+  {
+   "fieldname": "lta_per_annum",
+   "fieldtype": "Currency",
+   "label": "LTA Per Annum",
+   "read_only": 1
+  },
+  {
+   "fieldname": "other_allowance_per_annum",
+   "fieldtype": "Currency",
+   "label": "Other Allowance Per Annum",
+   "read_only": 1
+  },
+  {
+   "fieldname": "statutory_benefits_tab",
+   "fieldtype": "Tab Break",
+   "label": "Statutory Benefits "
+  },
+  {
+   "description": "As per Act of (1972)",
+   "fieldname": "gratuity",
+   "fieldtype": "Currency",
+   "label": "Gratuity",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_a8vy4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "provident_fund_per_annum",
+   "fieldtype": "Currency",
+   "label": "Provident Fund Per Annum",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "job_applicant.salutation",
+   "fieldname": "salutation",
+   "fieldtype": "Data",
+   "label": "Salutation",
+   "read_only": 1
+  },
+  {
+   "fieldname": "applicant_age",
+   "fieldtype": "Data",
+   "label": "Applicant Age"
+  },
+  {
+   "fieldname": "provident_fund",
+   "fieldtype": "Data",
+   "label": "Provident Fund",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tax_calculations_tab",
+   "fieldtype": "Tab Break",
+   "label": "Tax Calculations"
+  },
+  {
+   "fieldname": "total_taxable_amount",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Total Taxable Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "income_tax",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Income Tax Per annum",
+   "read_only": 1
+  },
+  {
+   "fieldname": "income_tax_per_month",
+   "fieldtype": "Currency",
+   "label": "Income Tax Per Month",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cess",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Cess",
+   "read_only": 1
+  },
+  {
+   "fieldname": "final_income_tax",
+   "fieldtype": "Currency",
+   "label": "Final Income Tax",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_6mer4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "net_pay_tab",
+   "fieldtype": "Tab Break",
+   "label": "Net Pay"
+  },
+  {
+   "fieldname": "net_pay",
+   "fieldtype": "Currency",
+   "label": "Net Pay",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_deductions",
+   "fieldtype": "Currency",
+   "label": "Total Deductions",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_deductions_per_annum",
+   "fieldtype": "Currency",
+   "label": "Total Deductions Per Annum",
+   "read_only": 1
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2020-06-25 00:56:24.756395",
+ "modified": "2023-10-11 18:07:52.795440",
  "modified_by": "Administrator",
  "module": "HR",
  "name": "Job Offer",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {
@@ -186,5 +415,6 @@
  "show_name_in_global_search": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
+ "states": [],
  "title_field": "applicant_name"
 }

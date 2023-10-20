@@ -4,48 +4,56 @@
 frappe.provide("erpnext.job_offer");
 
 frappe.ui.form.on("Job Offer", {
-	onload: function (frm) {
-		frm.set_query("select_terms", function() {
-			return { filters: { hr: 1 } };
-		});
-	},
+  onload: function (frm) {
+    frm.set_query("select_terms", function () {
+      return { filters: { hr: 1 } };
+    });
+  },
 
-	setup: function (frm) {
-		frm.email_field = "applicant_email";
-	},
+  setup: function (frm) {
+    frm.email_field = "applicant_email";
+  },
 
-	select_terms: function (frm) {
-		erpnext.utils.get_terms(frm.doc.select_terms, frm.doc, function (r) {
-			if (!r.exc) {
-				frm.set_value("terms", r.message);
-			}
-		});
-	},
+  select_terms: function (frm) {
+    erpnext.utils.get_terms(frm.doc.select_terms, frm.doc, function (r) {
+      if (!r.exc) {
+        frm.set_value("terms", r.message);
+      }
+    });
+  },
 
-	refresh: function (frm) {
-		if ((!frm.doc.__islocal) && (frm.doc.status == 'Accepted')
-			&& (frm.doc.docstatus === 1) && (!frm.doc.__onload || !frm.doc.__onload.employee)) {
-			frm.add_custom_button(__('Create Employee'),
-				function () {
-					erpnext.job_offer.make_employee(frm);
-				}
-			);
-		}
+  refresh: function (frm) {
+    if (
+      !frm.doc.__islocal &&
+      frm.doc.status == "Accepted" &&
+      frm.doc.docstatus === 1 &&
+      (!frm.doc.__onload || !frm.doc.__onload.employee)
+    ) {
+      frm.add_custom_button(__("Create Employee"), function () {
+        erpnext.job_offer.make_employee(frm);
+      });
+    }
 
-		if(frm.doc.__onload && frm.doc.__onload.employee) {
-			frm.add_custom_button(__('Show Employee'),
-				function () {
-					frappe.set_route("Form", "Employee", frm.doc.__onload.employee);
-				}
-			);
-		}
-	}
-
+    if (frm.doc.__onload && frm.doc.__onload.employee) {
+      frm.add_custom_button(__("Show Employee"), function () {
+        frappe.set_route("Form", "Employee", frm.doc.__onload.employee);
+      });
+    }
+  },
 });
 
 erpnext.job_offer.make_employee = function (frm) {
-	frappe.model.open_mapped_doc({
-		method: "hrms.hr.doctype.job_offer.job_offer.make_employee",
-		frm: frm
-	});
+  frappe.model.open_mapped_doc({
+    method: "hrms.hr.doctype.job_offer.job_offer.make_employee",
+    frm: frm,
+  });
+};
+
+cur_frm.cscript.ctc = function (doc) {
+  console.log("Custom script is executing.");
+  cur_frm.cscript.ctc = function (doc) {
+    // Calculate Field income_from_other_sources based on Field ctc
+    doc.income_from_other_sources = doc.ctc * 2; // Example calculation, change as needed
+    cur_frm.refresh_field("income_from_other_sources"); // Refresh the field to update the UI
+  };
 };

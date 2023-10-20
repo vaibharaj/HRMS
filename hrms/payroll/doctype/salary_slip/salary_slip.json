@@ -13,6 +13,8 @@
   "department",
   "designation",
   "branch",
+  "date_of_joining",
+  "date_of_birth",
   "column_break_obdl",
   "posting_date",
   "letter_head",
@@ -25,6 +27,7 @@
   "payroll_frequency",
   "start_date",
   "end_date",
+  "month_off",
   "column_break_ptcc",
   "salary_structure",
   "payroll_entry",
@@ -102,6 +105,8 @@
   "column_break_ieob",
   "bank_name",
   "bank_account_no",
+  "uan_no",
+  "provident_fund_account",
   "leave_details_section",
   "leave_details"
  ],
@@ -297,6 +302,7 @@
    "label": "Bank Name"
   },
   {
+   "fetch_from": "employee.bank_ac_no",
    "fieldname": "bank_account_no",
    "fieldtype": "Data",
    "label": "Bank Account No"
@@ -641,6 +647,7 @@
    "label": "Income Tax Breakup"
   },
   {
+   "fetch_from": "employee.ctc",
    "fieldname": "ctc",
    "fieldtype": "Currency",
    "label": "CTC",
@@ -747,13 +754,48 @@
    "depends_on": "eval:doc.salary_slip_based_on_timesheet",
    "fieldname": "timesheets_section",
    "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "employee.date_of_joining",
+   "fieldname": "date_of_joining",
+   "fieldtype": "Date",
+   "hidden": 1,
+   "label": "Date of Joining"
+  },
+  {
+   "fetch_from": "employee.date_of_birth",
+   "fieldname": "date_of_birth",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Date of birth "
+  },
+  {
+   "fetch_from": "employee.uan_number",
+   "fieldname": "uan_no",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "UAN No"
+  },
+  {
+   "fieldname": "month_off",
+   "fieldtype": "Select",
+   "label": "Month off",
+   "options": "\nJanuary\nFebruary\nMarch\nApril\nMay\nJune\nJuly\nAugust\nSeptember\nOctober\nNovember\nDecember.",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.provident_fund_account",
+   "fieldname": "provident_fund_account",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Provident Fund Account"
   }
  ],
  "icon": "fa fa-file-text",
  "idx": 9,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-02-22 18:23:49.783449",
+ "modified": "2023-09-21 16:05:43.985049",
  "modified_by": "Administrator",
  "module": "Payroll",
  "name": "Salary Slip",

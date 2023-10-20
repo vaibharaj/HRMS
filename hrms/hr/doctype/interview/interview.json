@@ -184,10 +184,11 @@
    "link_fieldname": "interview"
   }
  ],
- "modified": "2021-09-30 13:30:05.421035",
+ "modified": "2023-10-16 14:29:37.729971",
  "modified_by": "Administrator",
  "module": "HR",
  "name": "Interview",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {
@@ -228,6 +229,7 @@
    "read": 1,
    "report": 1,
    "role": "Interviewer",
+   "set_user_permissions": 1,
    "share": 1,
    "submit": 1,
    "write": 1
@@ -249,6 +251,7 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
+ "states": [],
  "title_field": "job_applicant",
  "track_changes": 1
 }

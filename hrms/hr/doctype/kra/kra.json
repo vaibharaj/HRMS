@@ -8,7 +8,9 @@
  "engine": "InnoDB",
  "field_order": [
   "title",
-  "description"
+  "description",
+  "section_break_bfa3g",
+  "scalling"
  ],
  "fields": [
   {
@@ -21,13 +23,24 @@
   },
   {
    "fieldname": "description",
-   "fieldtype": "Small Text",
-   "label": "Description"
+   "fieldtype": "Text",
+   "label": "Description",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_bfa3g",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "scalling",
+   "fieldtype": "Table",
+   "label": "Scalling",
+   "options": "KRA Table"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-03-17 20:53:40.000452",
+ "modified": "2023-10-06 12:05:06.345670",
  "modified_by": "Administrator",
  "module": "HR",
  "name": "KRA",

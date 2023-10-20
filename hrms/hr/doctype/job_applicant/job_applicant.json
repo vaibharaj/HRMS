@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "HR-APP-.YYYY.-.#####",
  "creation": "2013-01-29 19:25:37",
@@ -11,6 +12,7 @@
  "field_order": [
   "details_section",
   "applicant_name",
+  "salutation",
   "email_id",
   "phone_number",
   "country",
@@ -186,13 +188,20 @@
    "fieldtype": "Link",
    "label": "Designation",
    "options": "Designation"
+  },
+  {
+   "fieldname": "salutation",
+   "fieldtype": "Link",
+   "label": "Salutation",
+   "options": "Salutation",
+   "reqd": 1
   }
  ],
  "icon": "fa fa-user",
  "idx": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-01-25 17:39:20.694439",
+ "modified": "2023-10-16 12:08:24.938945",
  "modified_by": "Administrator",
  "module": "HR",
  "name": "Job Applicant",
@@ -207,6 +216,19 @@
    "read": 1,
    "report": 1,
    "role": "HR User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Interviewer",
+   "select": 1,
    "share": 1,
    "write": 1
   }

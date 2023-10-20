@@ -306,3 +306,5 @@ override_doctype_dashboards = {
 # Recommended only for DocTypes which have limited documents with untranslated names
 # For example: Role, Gender, etc.
 # translated_search_doctypes = []
+
+website_route_rules = [{'from_route': '/hr/<path:app_path>', 'to_route': 'hr'},]

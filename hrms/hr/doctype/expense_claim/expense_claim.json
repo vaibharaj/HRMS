@@ -16,6 +16,7 @@
   "approval_status",
   "delivery_trip",
   "is_paid",
+  "proof_attach",
   "expense_details",
   "expenses",
   "sb1",
@@ -373,13 +374,18 @@
    "fieldtype": "Link",
    "label": "Delivery Trip",
    "options": "Delivery Trip"
+  },
+  {
+   "fieldname": "proof_attach",
+   "fieldtype": "Attach Image",
+   "label": "Proof Attach"
   }
  ],
  "icon": "fa fa-money",
  "idx": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2021-11-22 16:26:57.787838",
+ "modified": "2023-10-19 16:48:53.836428",
  "modified_by": "Administrator",
  "module": "HR",
  "name": "Expense Claim",
@@ -445,6 +451,7 @@
  "show_name_in_global_search": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
+ "states": [],
  "timeline_field": "employee",
  "title_field": "title"
 }
